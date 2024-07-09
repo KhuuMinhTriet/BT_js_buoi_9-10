@@ -43,6 +43,9 @@ nutTimNV.addEventListener("click", function(e) {
 //Nút sửa nhân viên sẽ ẩn nút thêm người dùng của modal và hiển thị nút cập nhật
 list.addEventListener('click', function(e) {
     if(e.target && e.target.classList.contains('suaNV')) {
+        const index = e.target.getAttribute('data-index');
+        updateIndex = index;
+        resetModal();
         nutThemNV.style.display = 'none';
         nutCapNhatNV.style.display = 'block';
     }
@@ -69,6 +72,18 @@ function resetModal() {
         thongBao[i].style.display = 'none';
     }
 }
+
+//Tải thông tin vào modal, thường sử dụng cho update
+// function fillModal(nv) {
+//     account.value = nv.tknv;
+//     fullName.value = nv.hoTen;
+//     mail.value = nv.gmail;
+//     password.value = nv.matKhau;
+//     date.value = nv.ngayLam;
+//     position.value = nv.chucVu;
+//     standardFee.value = nv.luongCB;
+//     hour.value = nv.gioLam;
+// }
 
 //Function thêm nhân viên
 function themNV() {
@@ -128,7 +143,7 @@ function capNhatNV() {
             thongBao[i].style.display = 'inline-block';
         }
     }
-    // else {
+    else {
     //     if(ds_NhanVien.isDuplicate(nv.tknv)) {
     //         alert('Tài khoản đã tồn tại! Không thể đổi');
     //         return;
@@ -143,9 +158,9 @@ function capNhatNV() {
         nv.luongCB = luongCB;
         nv.gioLam = gioLam;
 
-        hienThiDS();        
+        hienThiDS();             
     //     }
-    // }
+    }
 }
 
 //Hiển thị danh sách nhân viên, có kèm điều kiện loại nhân viên để thực hiện lọc nhân viên theo loại
@@ -164,7 +179,7 @@ function hienThiDS(filterXepLoai = '') {
                         <td>${tongLuong(nv.chucVu, nv.luongCB)}</td>
                         <td>${loaiNV}</td>
                         <td>
-                            <button type="button" class="btn btn-success suaNV" data-target='#myModal' data-toggle='modal'>Sửa</button>
+                            <button type="button" class="btn btn-success suaNV" data-target='#myModal' data-toggle='modal' data-index="${index}">Sửa</button>
                             <button type="button" class="btn btn-danger" onclick="openDeletePopup(${index})">Xóa</button>
                         </td>
                     </tr>
