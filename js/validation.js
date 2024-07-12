@@ -14,7 +14,7 @@ function validateEmail(email) {
 }
 
 function validatePassword(matKhau) {
-    const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,10}$/;
+    const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{6,10}$/;
     return regex.test(matKhau);
 }
 
