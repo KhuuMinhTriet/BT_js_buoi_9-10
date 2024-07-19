@@ -120,7 +120,7 @@ function themNV() {
 
 //Function tìm nhân viên theo loại 
 function timNV() {
-    var filterXepLoai = getID_Value("searchName");
+    var filterXepLoai = getID_Value("searchName").toLowerCase();
     hienThiDS(filterXepLoai);
 }
 
@@ -167,8 +167,8 @@ function capNhatNV() {
 function hienThiDS(filterXepLoai = '') {
     var content = "";
     ds_NhanVien.list.map(function (nv, index) {
-        var loaiNV = xepLoai(nv.gioLam);
-        if(filterXepLoai === '' || filterXepLoai == loaiNV) {
+        var loaiNV = xepLoai(nv.gioLam).toLowerCase();
+        if(filterXepLoai === '' || loaiNV.includes(filterXepLoai)) {
             content += `
                     <tr>
                         <td>${nv.tknv}</td>
