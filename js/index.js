@@ -167,7 +167,7 @@ function capNhatNV() {
 function hienThiDS(filterXepLoai = '') {
     var content = "";
     ds_NhanVien.list.map(function (nv, index) {
-        var loaiNV = xepLoai(nv.gioLam).toLowerCase();
+        var loaiNV = nv.xepLoai().toLowerCase();
         if(filterXepLoai === '' || loaiNV.includes(filterXepLoai)) {
             content += `
                     <tr>
@@ -176,7 +176,7 @@ function hienThiDS(filterXepLoai = '') {
                         <td>${nv.gmail}</td>
                         <td>${nv.ngayLam}</td>
                         <td>${nv.chucVu}</td>
-                        <td>${tongLuong(nv.chucVu, nv.luongCB)}</td>
+                        <td>${nv.tinhTongLuong()}</td>
                         <td>${loaiNV}</td>
                         <td>
                             <button type="button" class="btn btn-success suaNV" data-target='#myModal' data-toggle='modal' data-index="${index}">Sửa</button>
