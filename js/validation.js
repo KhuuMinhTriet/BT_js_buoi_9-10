@@ -65,49 +65,65 @@ function validateForm() {
         document.getElementById('tbTKNV').innerHTML = 'Tài khoản phải chứa từ 4-6 kí tự';
         isValid = false;
     }
-    else document.getElementById('tbTKNV').innerHTML = '';
+    else {
+        document.getElementById('tbTKNV').innerHTML = '';
+    }
 
     if(!validateName(hoTen)) {
         document.getElementById('tbTen').innerHTML = 'Họ tên chỉ bao gồm chữ';
         isValid = false;
     }
-    else document.getElementById('tbTen').innerHTML = '';
+    else {
+        document.getElementById('tbTen').innerHTML = '';
+    }
 
     if(!validateEmail(gmail)) {
         document.getElementById('tbEmail').innerHTML = 'Mail không đúng định dạng';
         isValid = false;
     }
-    else document.getElementById('tbEmail').innerHTML = '';
+    else {
+        document.getElementById('tbEmail').innerHTML = '';
+    }
 
     if(!validatePassword(matKhau)) {
         document.getElementById('tbMatKhau').innerHTML = 'Mật khẩu phải từ 6-10 kí tự, gồm 1 nhất 1 ký tự số, 1 ký tự in hoa và 1 ký tự đặc biệt';
         isValid = false;
     }
-    else document.getElementById('tbMatKhau').innerHTML = '';
+    else {
+        document.getElementById('tbMatKhau').innerHTML = '';
+    }
 
     if(!validateDate(ngayLam)) {
         document.getElementById('tbNgay').innerHTML = 'Ngày vào làm không hợp lệ';
         isValid = false;
     }
-    else document.getElementById('tbNgay').innerHTML = '';
+    else {
+        document.getElementById('tbNgay').innerHTML = '';
+    }
 
     if(!validateChucVu(chucVu)) {
         document.getElementById('tbChucVu').innerHTML = 'Chức vụ không hợp lệ';
         isValid = false;
     }
-    else document.getElementById('tbChucVu').innerHTML = '';
+    else {
+        document.getElementById('tbChucVu').innerHTML = '';
+    }
 
     if(!validateLuongCB(luongCB)) {
         document.getElementById('tbLuongCB').innerHTML = 'Lương cơ bản phải từ 1tr - 20tr';
         isValid = false;
     }
-    else document.getElementById('tbLuongCB').innerHTML = '';
+    else {
+        document.getElementById('tbLuongCB').innerHTML = '';
+    }
 
     if(!validateGioLam(gioLam)) {
         document.getElementById('tbGiolam').innerHTML = 'Giờ làm hợp lệ phải từ 80h - 200h';
         isValid = false;
     }
-    else document.getElementById('tbGiolam').innerHTML = '';
+    else {
+        document.getElementById('tbGiolam').innerHTML = '';
+    }
 
     return isValid;
 }
