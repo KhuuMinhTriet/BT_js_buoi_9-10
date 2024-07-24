@@ -45,7 +45,7 @@ list.addEventListener('click', function(e) {
     if(e.target && e.target.classList.contains('suaNV')) {
         const index = e.target.getAttribute('data-index');
         updateIndex = index;
-        resetModal();
+        fillModal(ds_NhanVien.list[index]);
         nutThemNV.style.display = 'none';
         nutCapNhatNV.style.display = 'block';
     }
@@ -74,16 +74,16 @@ function resetModal() {
 }
 
 //Tải thông tin vào modal, thường sử dụng cho update
-// function fillModal(nv) {
-//     account.value = nv.tknv;
-//     fullName.value = nv.hoTen;
-//     mail.value = nv.gmail;
-//     password.value = nv.matKhau;
-//     date.value = nv.ngayLam;
-//     position.value = nv.chucVu;
-//     standardFee.value = nv.luongCB;
-//     hour.value = nv.gioLam;
-// }
+function fillModal(nv) {
+    account.value = nv.tknv;
+    fullName.value = nv.hoTen;
+    mail.value = nv.gmail;
+    password.value = nv.matKhau;
+    date.value = nv.ngayLam;
+    position.value = nv.chucVu;
+    standardFee.value = nv.luongCB;
+    hour.value = nv.gioLam;
+}
 
 //Function thêm nhân viên
 function themNV() {
